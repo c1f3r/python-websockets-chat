@@ -1,1 +1,1 @@
-web: gunicorn -k flask_sockets.worker chat:app
+web: gunicorn --pythonpath=. --worker-class=geventworker.StopCrashingInGunicornWorker chat:app
